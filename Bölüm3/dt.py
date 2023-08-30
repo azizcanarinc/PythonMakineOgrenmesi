@@ -85,11 +85,15 @@ print(svr_reg.predict([[6.6]]))
 
 from sklearn.tree import DecisionTreeRegressor
 r_dt = DecisionTreeRegressor(random_state=0)
-r_dt.fit()
-
-
-
-
+r_dt.fit(X,Y)
+z=x+0.5
+k=x-0.4
+plt.scatter(X, Y,color="red")
+plt.plot (X,r_dt.predict(X),color="blue")
+plt.plot (X,r_dt.predict(z),color="green")
+plt.plot (X,r_dt.predict(k),color="yellow")
+print(r_dt.predict([[12]]))
+print(r_dt.predict([[6.6]]))
 
 
 
