@@ -44,6 +44,19 @@ cm=confusion_matrix(y_test,y_pred)
 print("confusion_matrix")
 print(cm)
 
+from sklearn.neighbors import KNeighborsClassifier
+knn=KNeighborsClassifier(  n_neighbors=5,metric="minkowski")
+knn.fit(X_train,y_train)
+
+y_pred = knn.predict(X_test)
+
+cm=confusion_matrix(y_test,y_pred)
+print(cm)
+
+
+
+
+
 
 
 
