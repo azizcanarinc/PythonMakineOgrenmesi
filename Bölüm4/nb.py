@@ -61,20 +61,44 @@ svc.fit(X_train,y_train)
 
 y_pred=svc.predict(X_test)
 cm=confusion_matrix(y_test,y_pred)
-print("svc")
+print("SVC")
 print(cm)
 
 
 
+from sklearn.naive_bayes import GaussianNB
+gnb=GaussianNB()
+gnb.fit(X_train,y_train)
+
+y_pred = gnb.predict(X_test)
+
+cm=confusion_matrix(y_test,y_pred)
+print("GNB")
+print(cm)
 
 
 
+from sklearn.tree import DecisionTreeClassifier
+
+dtc=DecisionTreeClassifier(criterion="entropy")
+
+
+dtc.fit(X_train,y_train)
+y_pred=dtc.predict(X_test)
+cm=confusion_matrix(y_test,y_pred)
+print("DTC")
+print(cm)
 
 
 
+from sklearn.ensemble import RandomForestClassifier
+rfc =RandomForestClassifier(n_estimators=10,criterion="entropy")
+rfc.fit(X_train,y_train)
 
-
-
+y_pred=rfc.predict(X_test)
+cm=confusion_matrix(y_test,y_pred)
+print("RFC")
+print(cm)
 
 
 
